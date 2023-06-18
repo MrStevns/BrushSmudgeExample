@@ -15,7 +15,10 @@ https://web.archive.org/web/20100916174858/http://losingfight.com:80/blog/2007/0
 * Choose a png or jpg file
 * A new document will open with the given image and you should be able to smudge on it using left mouse button.
 
-# Overview
+________________________________________________________
+# How to implement smudge and stamp tools
+
+## Overview
 Your basic smudge tools smears the paint as if you dragged a clean brush across it. For example if you start with simple image below:
 
 ![image](https://github.com/MrStevns/BrushSmudgeExample/assets/1045397/63e6acc1-b43d-4ddd-bf94-2b071998439e)
@@ -28,7 +31,7 @@ How much of a smudge you get is determined by how much pressure is applied.
 
 The idea behind a smudge tool is that as you drag a brush through paint, both the canvas and brush swap paint. The brush picks up paint from the canvas then deposits it elsewhere on the canvas. If you’re familiar with bitmap editors, that almost sounds like the stamp brush tool, which it is, so as a bonus we’ll cover how to implement a stamp brush tool.
 
-# Algorithm
+## Algorithm
 
 When researching how to implement a smudge tool, I found that just about everyone has a different implementation. They range from the very simple, to the very complex which are trying to accurately simulate the physical characteristics of a brush dragged across paint. The algorithm that I’ll present here definitely falls on the simple side, but it is reasonably close to what popular graphics editors implement.
 
@@ -41,7 +44,8 @@ The only other deviation from the usual stamping algorithm is the stamp spacing.
 ![image](https://github.com/MrStevns/BrushSmudgeExample/assets/1045397/98f177b2-ade5-4b9d-a2dd-647ee795629a)
 
 That’s it for our simple smudge algorithm. If we wanted something more complex, we could create a separate drawing context for the brush tip image, and have it actually accumulate paint from the canvas. We could also have the brush tip textured, so it picked up paint more in the raised areas of the brush.
-# Code architecture
+
+## Code architecture
 
 As always, I have provided sample code to demonstrate the smudge tool. It is heavily based on the sample code from the brushes article, so we will only cover the differences between the smudge tool and a normal brush. There are four classes in the sample code: MyDocument, CanvasView, Canvas, and Smudge.
 
@@ -55,11 +59,11 @@ The Smudge class represents a brush that can be used to smear paint across the c
 
 We’ll tackle the changes in the Canvas class first, then dig into the Smudge class.
 
-## Canvas
+### Canvas
 
 Unlike its previous incarnation, the Canvas class here is backed by a CGLayerRef, instead of a CGBitmapContext. This allows both greater ease of use when stamping from the canvas onto itself, and better performance. There is no init method on this class because it requires an NSImage, which will be specified later. There is a dealloc method, which simply releases the CGLayerRef.
 
-### Initialization
+#### Initialization
 
 The initialization happens when the setImage method is called by the CanvasView class. It is responsible for creating a CGLayerRef of the proper size and rendering the NSImage parameter into the layer:
 
@@ -107,7 +111,7 @@ Next, we need to render the NSImage we got as a parameter into our layer:
 
 We’re going to use Cocoa drawing classes to render the image, so we need to go from our CGLayerRef to a focused NSGraphicsContext. Fortunately, CGLayerRef has a method that will return a CGContextRef, and NSGraphicsContext has a constructor that will take a CGContextRef. The first bit of drawing we do is to render a white background. This is for the case of a transparent image. Finally, we render the image into the current NSGraphicsContext, which happens to our layer. Our Canvas object is now initialized and ready to be used.
 
-### Drawing the canvas onto a view
+#### Drawing the canvas onto a view
 
 After initialization, the first thing we’ll be asked to do in the Canvas class is to render. This is covered in drawRect:
 
@@ -124,7 +128,7 @@ After initialization, the first thing we’ll be asked to do in the Canvas class
 ```
 
 This is almost too trivial to cover. If we have created a layer, we render it into the NSGraphicsContext passed in. The End.
-### Rendering a line of stamps
+#### Rendering a line of stamps
 
 As we covered earlier, the stamping algorithm hasn’t changed from the brushes article, although one of the parameters has, and a constant derived from that parameter. Since the line stamping is rather long, we’ll only review the part that has changed, which, fortunately for us, is only the function signature and the first line of code:
 
@@ -139,7 +143,7 @@ Instead of passing in an image to be used for stamping, we now pass in the smudg
 
 The rest of the method is the same as before.
 
-### Rendering a single stamp
+#### Rendering a single stamp
 
 The last part of the Canvas class to cover is the rendering of a single stamp, which as noted above, is no longer handled in the Canvas class:
 
@@ -156,11 +160,11 @@ We just hand the rendering of a stamp off to our Smudge class. We provide it wit
 
 As you can see, the main ideas of the Canvas class didn’t change, but a bit of the implementation did, in order to make it more flexible.
 
-# Smudge
+## Smudge
 
 The Smudge class contains most of the interesting code. Like its predecessor, Brush, it tells the Canvas class where to render lines and single points. However, it is also responsible for rendering a single stamp. Since Smudge and its predecessor have so much in common, we’ll only discuss where they differ.
 
-## Parameters
+### Parameters
 
 The smudge tool has some new parameters that weren’t in the basic brush class. They are initialized in init:
 
@@ -227,7 +231,7 @@ Examples:
 
 The rest of the parameters are identical to those in the regular brush class.
 
-### Creating the brush tip
+#### Creating the brush tip
 
 The job of creating the brush tip is a bit different in the smudge tool than the original brush tool. In the original brush we created a full ARGB image in the brush color with the correct transparency. Since our brush image is going to be pixels from the canvas, we just want the brush tip, mMask, to reflect the shape, or transparency, of the brush. So instead of a full color image, we create a grayscale image with no alpha that will act as a mask for our actual brush image. This allows us to impose our brush shape onto any random image.
 
@@ -288,7 +292,7 @@ The new createBrushTip method looks like:
 
 Note that createBitmapContext actually creates a grayscale bitmap context with no alpha that is filled to completely black. The only real difference in createBrushTip is that we set the color to white instead of a user specified color. In an image that is used as a mask, white means that a pixel is full opaque, while black means the pixel will be fully transparent.
 
-### Rendering a single stamp
+#### Rendering a single stamp
 
 The real meat of Smudge is where we render a single stamp of the brush into the canvas’s CGLayerRef. The render function starts out like the old single stamp method on Canvas:
 
@@ -396,7 +400,7 @@ The last little bit of the Smudge class that we need to examine is the spacing m
 
 If you recall, the Canvas class calls back into the smudge tool to determine how far apart to space the stamps. In order to avoid a really choppy smudge, we return a spacing of 1 pixel.
 
-# Stamp tool
+## Stamp tool
 
 We haven’t really spoken about a stamp tool, but if you know what one is, you probably realized that it sounds a bit like the smudge tool in terms of implementation. Briefly, a stamp tool takes a location on the canvas and copies it to another point on the canvas. It is used to copy parts of an image exactly. The source pixels are determined by the user specifying an offset from the cursor for the stamp tool to pull from.
 
@@ -453,7 +457,7 @@ All we’re doing here is returning the stamp spacing to the normal spacing. We 
 
 The code for the stamp tool is not included in the downloadable sample code, but you should be able to copy paste the methods provided here into the Smudge class and have them work.
 
-# Conclusion
+## Conclusion
 
 The smudge tool was surprisingly simple to implement. I had done a stamp tool previously, but not presented it, because I felt it was too simple to stand on its own. However, given that its implementation is similar to the smudge tool, I jumped at the chance to present it here.
 
