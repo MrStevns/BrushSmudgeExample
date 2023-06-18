@@ -1,4 +1,3 @@
-# BrushSmudgeExample
 A smudge implementation in Cocoa
 
 ![smudge-test](https://github.com/MrStevns/BrushSmudgeExample/assets/1045397/682cceb2-0a12-4406-98b1-0df66b9454d9)
