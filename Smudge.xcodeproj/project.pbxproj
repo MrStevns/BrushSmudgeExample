@@ -1,0 +1,367 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		285732222A3EFD330073C524 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 285732212A3EFD330073C524 /* AppDelegate.m */; };
+		2857322A2A3EFD350073C524 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 285732292A3EFD350073C524 /* Assets.xcassets */; };
+		2857322D2A3EFD350073C524 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2857322B2A3EFD350073C524 /* MainMenu.xib */; };
+		285732302A3EFD350073C524 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2857322F2A3EFD350073C524 /* main.m */; };
+		2857323D2A3EFD820073C524 /* CanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 285732372A3EFD810073C524 /* CanvasView.m */; };
+		2857323E2A3EFD820073C524 /* MyDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 285732382A3EFD820073C524 /* MyDocument.m */; };
+		2857323F2A3EFD820073C524 /* Canvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 2857323B2A3EFD820073C524 /* Canvas.m */; };
+		285732422A3EFDCE0073C524 /* Smudge.m in Sources */ = {isa = PBXBuildFile; fileRef = 285732402A3EFDCD0073C524 /* Smudge.m */; };
+		285732442A3EFDDA0073C524 /* MyDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 285732432A3EFDDA0073C524 /* MyDocument.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2857321D2A3EFD330073C524 /* Smudge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smudge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		285732202A3EFD330073C524 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		285732212A3EFD330073C524 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		285732292A3EFD350073C524 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2857322C2A3EFD350073C524 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		2857322E2A3EFD350073C524 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2857322F2A3EFD350073C524 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		285732312A3EFD350073C524 /* Smudge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Smudge.entitlements; sourceTree = "<group>"; };
+		285732372A3EFD810073C524 /* CanvasView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasView.m; sourceTree = "<group>"; };
+		285732382A3EFD820073C524 /* MyDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDocument.m; sourceTree = "<group>"; };
+		285732392A3EFD820073C524 /* CanvasView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasView.h; sourceTree = "<group>"; };
+		2857323A2A3EFD820073C524 /* Canvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Canvas.h; sourceTree = "<group>"; };
+		2857323B2A3EFD820073C524 /* Canvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Canvas.m; sourceTree = "<group>"; };
+		2857323C2A3EFD820073C524 /* MyDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDocument.h; sourceTree = "<group>"; };
+		285732402A3EFDCD0073C524 /* Smudge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Smudge.m; sourceTree = "<group>"; };
+		285732412A3EFDCE0073C524 /* Smudge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Smudge.h; sourceTree = "<group>"; };
+		285732432A3EFDDA0073C524 /* MyDocument.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyDocument.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2857321A2A3EFD330073C524 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		285732142A3EFD330073C524 = {
+			isa = PBXGroup;
+			children = (
+				2857321F2A3EFD330073C524 /* Smudge */,
+				2857321E2A3EFD330073C524 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2857321E2A3EFD330073C524 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2857321D2A3EFD330073C524 /* Smudge.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2857321F2A3EFD330073C524 /* Smudge */ = {
+			isa = PBXGroup;
+			children = (
+				285732202A3EFD330073C524 /* AppDelegate.h */,
+				285732212A3EFD330073C524 /* AppDelegate.m */,
+				2857323A2A3EFD820073C524 /* Canvas.h */,
+				2857323B2A3EFD820073C524 /* Canvas.m */,
+				285732412A3EFDCE0073C524 /* Smudge.h */,
+				285732402A3EFDCD0073C524 /* Smudge.m */,
+				285732432A3EFDDA0073C524 /* MyDocument.xib */,
+				285732392A3EFD820073C524 /* CanvasView.h */,
+				285732372A3EFD810073C524 /* CanvasView.m */,
+				2857323C2A3EFD820073C524 /* MyDocument.h */,
+				285732382A3EFD820073C524 /* MyDocument.m */,
+				285732292A3EFD350073C524 /* Assets.xcassets */,
+				2857322B2A3EFD350073C524 /* MainMenu.xib */,
+				2857322E2A3EFD350073C524 /* Info.plist */,
+				2857322F2A3EFD350073C524 /* main.m */,
+				285732312A3EFD350073C524 /* Smudge.entitlements */,
+			);
+			path = Smudge;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2857321C2A3EFD330073C524 /* Smudge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 285732342A3EFD350073C524 /* Build configuration list for PBXNativeTarget "Smudge" */;
+			buildPhases = (
+				285732192A3EFD330073C524 /* Sources */,
+				2857321A2A3EFD330073C524 /* Frameworks */,
+				2857321B2A3EFD330073C524 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Smudge;
+			productName = Smudge2;
+			productReference = 2857321D2A3EFD330073C524 /* Smudge.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		285732152A3EFD330073C524 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					2857321C2A3EFD330073C524 = {
+						CreatedOnToolsVersion = 14.0;
+					};
+				};
+			};
+			buildConfigurationList = 285732182A3EFD330073C524 /* Build configuration list for PBXProject "Smudge" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 285732142A3EFD330073C524;
+			productRefGroup = 2857321E2A3EFD330073C524 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2857321C2A3EFD330073C524 /* Smudge */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2857321B2A3EFD330073C524 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				285732442A3EFDDA0073C524 /* MyDocument.xib in Resources */,
+				2857322A2A3EFD350073C524 /* Assets.xcassets in Resources */,
+				2857322D2A3EFD350073C524 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		285732192A3EFD330073C524 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				285732302A3EFD350073C524 /* main.m in Sources */,
+				2857323D2A3EFD820073C524 /* CanvasView.m in Sources */,
+				285732222A3EFD330073C524 /* AppDelegate.m in Sources */,
+				2857323E2A3EFD820073C524 /* MyDocument.m in Sources */,
+				2857323F2A3EFD820073C524 /* Canvas.m in Sources */,
+				285732422A3EFDCE0073C524 /* Smudge.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2857322B2A3EFD350073C524 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2857322C2A3EFD350073C524 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		285732322A3EFD350073C524 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		285732332A3EFD350073C524 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		285732352A3EFD350073C524 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Smudge/Smudge.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Smudge/Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainNibFile = MainMenu;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = my.test.project.Smudge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Debug;
+		};
+		285732362A3EFD350073C524 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Smudge/Smudge.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Smudge/Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainNibFile = MainMenu;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = my.test.project.Smudge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		285732182A3EFD330073C524 /* Build configuration list for PBXProject "Smudge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				285732322A3EFD350073C524 /* Debug */,
+				285732332A3EFD350073C524 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		285732342A3EFD350073C524 /* Build configuration list for PBXNativeTarget "Smudge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				285732352A3EFD350073C524 /* Debug */,
+				285732362A3EFD350073C524 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 285732152A3EFD330073C524 /* Project object */;
+}
