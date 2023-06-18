@@ -1,8 +1,20 @@
 # BrushSmudgeExample
 A smudge implementation in Cocoa
 
+![smudge-test](https://github.com/MrStevns/BrushSmudgeExample/assets/1045397/682cceb2-0a12-4406-98b1-0df66b9454d9)
+
 Project was initially written for an older version of Xcode, utilizing nib files which (in its original form) did not work with Xcode 14.
 I have updated the structure so that it works, the implementation itself however has been left untouched.
+
+Credit goes to Andy Finnell
+https://web.archive.org/web/20100916174858/http://losingfight.com:80/blog/2007/09/04/how-to-implement-smudge-and-stamp-tools/
+
+# How to use
+* Open the xcodeproj file in Xcode
+* Compile and run
+* When the program has been launched, go to file and select open
+* Choose a png or jpg file
+* A new document will open with the given image and you should be able to smudge on it using left mouse button.
 
 # Overview
 Your basic smudge tools smears the paint as if you dragged a clean brush across it. For example if you start with simple image below:
@@ -449,6 +461,3 @@ The smudge tool was surprisingly simple to implement. I had done a stamp tool pr
 There’s still plenty that could be improved on here. The smudge tool is begging for pressure sensitivity from a tablet. It could also be made more realistic by accumulating paint and using a textured brush.
 
 Happy smudging!
-
-Source:
-https://web.archive.org/web/20100916174858/http://losingfight.com:80/blog/2007/09/04/how-to-implement-smudge-and-stamp-tools/
